@@ -3,7 +3,7 @@ assets  = require 'connect-assets'
 
 app     = express.createServer express.logger()
 
-app.use assets()
+app.use assets buildDir: "builtAssets"
 app.use express.static "#{__dirname}/public"
 app.set 'view engine', 'jade'
 
