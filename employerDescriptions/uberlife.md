@@ -1,0 +1,4 @@
+- Joined Uberlife straight after leaving AOL, as they were going to SxSW a month later.
+- Added features to Uberlife as well as fixing bugs, and identifying issues with the application's architecture.
+- Wrote the application's first integration tests with Cucumber.
+- Was not kept on past the trial period. The reason given was that I was not delivering features as fast as they wanted.

@@ -1,0 +1,229 @@
+!!!
+html
+  head
+    title Paul Jensen
+    != css('cv')
+  body
+    .container
+      #header.row
+        #myPicture
+        h1 Paul Jensen
+      #content.row
+        .span8
+          .date-of-birth.left Born 28th May, 1985 at St. Barts Hospital, London
+          .address.left 
+            span 10 Catherall Road
+            br 
+            span London
+            br 
+            span N5 2LD
+        .span8.last
+          .phone.pull-right +44 (0) 7914 171 345
+          br
+          .email.pull-right
+            a(href='mailto:paulbjensen@gmail.com') paulbjensen@gmail.com
+        .row
+          .span16
+            .center A well-mannered, hard-working individual with a diverse creativity streak, and a strong interest in technology.
+        .row#education
+          .span16.center.last
+            h2 Education & Qualifications
+          .span16.center.last
+            .school
+              a(href = 'http://www.sharnbrook.beds.sch.uk') Sharnbrook Upper School & Community College (1998 - 2003)
+            .university 
+              a(href = 'http://www.cass.city.ac.uk') Cass Business School, City University London (2003 - 2006)
+          .span5
+            h3.center GCSEs
+            table.table
+              thead
+                tr
+                  th Subject
+                  th Grade 
+              tbody
+                tr
+                  td Business Studies
+                  td A*
+                tr
+                  td Mathematics
+                  td B
+                tr
+                  td Science
+                  td B
+                tr
+                  td English
+                  td B
+                tr
+                  td History
+                  td B
+                tr
+                  td Expressive Arts
+                  td B
+                tr
+                  td Religious Education
+                  td B
+                tr
+                  td Food Technology
+                  td D
+                tr
+                  td German
+                  td D
+
+          .span5.center
+            h3 A Levels
+            table.table
+              thead
+                tr
+                  th Subject
+                  th Grade 
+              tbody
+                tr
+                  td A2 Communication Studies
+                  td A
+                tr
+                  td A2 Business Studies
+                  td B
+                tr
+                  td A2 Information Technology
+                  td B
+                tr
+                  td A2 Philosophy
+                  td D
+                tr
+                  td AS General Studies
+                  td B
+
+          .span6.center
+            h3 Degree
+            table.table
+              thead
+                tr
+                  th Subject
+                  th Grade 
+              tbody
+                tr
+                  td BSc Management & Systems
+                  td 2:1
+
+        .row#employment
+          .span16.last
+            h2.center Employment
+            - for(employer in employers)
+              .employer.clearfix
+                .details
+                  .company
+                    a(href = employers[employer]['url'])
+                      h3= employers[employer]['company']
+                  .role= employers[employer]['role']
+                  .timeline= employers[employer]['timeline']
+                .description!= employers[employer]['description']
+        .row#achievements
+          .span16.last
+            h2.center Achievements
+          .span16.last
+            ul
+              - for(achievement in achievements)
+                li.ac
+                  .year= achievements[achievement]['year']
+                  .description= achievements[achievement]['achievement']
+        .row#skills
+          .span16.last
+            h2.center Skills
+          .span16
+            h3 Ruby
+            ul
+              li Began learning Ruby and Ruby on Rails in January 2007.
+              li Gave a presentation at LRUG April 2009 on using <a href="http://www.slideshare.net/paulbjensen/geokit-in-social-apps-1327600">Geokit in social apps</a>.
+              li Recently created a <a href="https://github.com/paulbjensen/dashku-ruby">Rubygem</a> that acts as a wrapper to Dasku's API.
+
+            h3 Ruby on Rails
+            ul 
+              li Been using RoR commercially since June 2007 (Tickex). Used continously throughout my time at New Bamboo, at AOL (2010), and at Uberlife.
+              li Built a Rails plugin for helping developers build apps to visually match wireframes: <a href="https://github.com/newbamboo/tangerine">Tangerine</a>.
+            
+            h3 Javascript / CoffeeScript
+            ul
+              li Began using JavaScript at Tickex, and to a greater extent at New Bamboo and AOL.
+              li Recreated the <a href="http://snake.heroku.com">Snake game</a> using HTML5 Canvas, whilst at New Bamboo. (<a href="https://github.com/newbamboo/Snake">Github</a>, <a href="http://blog.new-bamboo.co.uk/2009/12/31/html5-canvas-snake-game">blog post</a>)
+              li Created a client-side templating library called <a href="http://paulbjensen.github.com/smartTemplate/">SmartTemplate</a> whilst at AOL.
+              li Built a simple Heroku-based app called <a href="http://coffeegrinderapp.com">Coffee Grinder</a> to convert CoffeeScript files to JavaScript, at AOL.
+
+            h3 Node.js
+            ul 
+              li Been using Node.js commercially since January 2011 (AOL). Continued to use it since.
+              li A core contributor to a real-time web framework built on Node.js called <a href="http://socketstream.com">SocketStream</a>.
+              li Recently launched <a href="https://dashku.com">Dashku</a>, an application built with SocketStream. Built by myself in 2<sup>1/2</sup> months.
+              li As part of Dashku, I've been building an npm called <a href="https://github.com/paulbjensen/satellite">Satellite</a>, which adds some extensions to <a href="https://github.com/nodejitsu/node-http-proxy">node-http-proxy</a>.
+              li Also part of Dashku, I created an <a href="https://github.com/paulbjensen/dashku-node">npm</a> for Dashku that acts as a wrapper to its REST API. 
+
+            h3 MongoDB
+            ul
+              li Been using MongoDB commercially since January 2011 (AOL). Used it continually since.
+              li Experience with building apps that use MongDB, optimising queries to reduce bandwidth consumption and query time, and some admin of MongoDB databases.
+              li Spotted a bug in the Mongoid Rubygem (<a href="https://github.com/mongoid/mongoid/issues/1734">GitHub issue</a>).
+
+            h3 Redis
+            ul
+              li Began using Redis at AOL.
+              li Using Redis to handle user sessions and API key lookups in Dashku.
+              li Currently developing an option within Satellite to store its internal data via Redis, in combination with using Node.js' cluster API.
+
+            h3 Git
+            ul
+              li Been using Git since 2008 (Naked). Been using GitHub since March 2008.
+              li Experience with creating self-hosted git repositories (AOL), using feature branches, and using git blame to hunt down the introduction of bugs.
+              li Working on a concept application that uses git hooks to alter the status of tasks and stories during an Agile sprint.
+
+            h3 Other
+            ul
+              li Some experience using MySQL/PostGreSQL. My knowledge/experience in using SQL is limited, and needs improving.
+              li Some experience in setting up Linux servers to run applications, from my time at New Bamboo, AOL, and recently with Dashku.
+              li Plenty of experience in working with HTML and CSS (from 2006 to today).
+
+        .row#hobbies
+          .span16.last
+            h2.center Hobbies and Interests
+          .span16.last
+            ul
+              li Cycling (and occasionally running at the Gym)
+              li Reading (current book: <a href="http://www.amazon.co.uk/The-Quants-Whizzes-Conquered-Destroyed/dp/0739385062">The Quants</a> by Scott Patterson)
+              li Trying to learn Mandarin (visited China last year, would like to be fluent the next time I visit)
+              li Working on pet projects
+
+        .row#references
+          .span16.last
+            h2.center References
+          .span4
+            a.name(href="http://uk.linkedin.com/in/dominicshelley") Dominic Shelley
+            .title Vice President, European IT
+            .company Hilton Worldwide
+            a.email(href='mailto:dshelleyic@aol.com') dshelleyic@aol.com
+            .relation
+              b How do you know Dominic?
+              .reason I worked under Dominic's line of reports at AOL. 
+          .span4
+            a.name(href="http://uk.linkedin.com/in/owenbarnes") Owen Barnes
+            .title Senior Manager
+            .company AOL
+            a.email(href='mailto:owen.barnes@teamaol.com') owen.barnes@teamaol.com
+            .relation
+              b How do you know Owen?
+              .reason I worked for Owen at AOL. 
+          .span4
+            a.name(href="http://uk.linkedin.com/pub/max-williams/2/8a/346") Max Williams
+            .title CEO and Co-Founder
+            .company Pusher
+            a.email(href='mailto:max@pusher.com') max@pusher.com
+            .relation
+              b How do you know Max?
+              .reason I worked for Max at New Bamboo, which he owns with Damien Tanner.
+          .span4.last
+            a.name(href="http://uk.linkedin.com/in/jlsync") Jason Lee
+            .title CTO
+            .company Savergo
+            a.email(href = 'mailto:jlsync@gmail.com') jlsync@gmail.com
+            .relation
+              b How do you know Jason?
+              .reason I worked under the lead of Jason when we were both at Naked
+
+          

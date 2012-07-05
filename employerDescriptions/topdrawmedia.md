@@ -1,0 +1,2 @@
+- Interned with a small team to help develop one of their major projects, [Dining Out in Essex](http://www.essexrestaurants.com/)
+- Focussed on content development, client site designs, and extending the back-end system to accommodate user needs.

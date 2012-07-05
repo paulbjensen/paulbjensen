@@ -1,0 +1,2 @@
+- Worked in a team on fitting a 420,000 sq ft warehouse with its exterior within a tight schedule
+- Gained teamwork experience, and an insight into the practical nature of project management.
