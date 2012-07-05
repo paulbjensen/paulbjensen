@@ -77,9 +77,9 @@ employers = [
 
 # For some reason, express 3.0 beta does not have a 'layout' and 'index' concept like before
 app.get '/', (req, res) ->
-  res.render 'index'
+  res.render 'index', layout: false
 
 app.get '/cv', (req, res) ->
-  res.render 'cv', {employers, achievements} 
+  res.render 'cv', layout: false, locals: {employers, achievements} 
 
 app.listen 3000
