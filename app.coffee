@@ -11,7 +11,6 @@ app.set 'view engine', 'jade'
 empDesc = (name) -> 
   md fs.readFileSync './employerDescriptions/'+name+'.md', 'utf8', (err,data) -> data
 
-
 employers = [
     {
       'timeline': 'February 2012 - April 2012',
@@ -77,7 +76,16 @@ employers = [
 
 # For some reason, express 3.0 beta does not have a 'layout' and 'index' concept like before
 app.get '/', (req, res) ->
-  res.render 'index', layout: false
+  fs.readdir "./posts", (err, posts) ->
+    fs.readFile "./posts/#{posts[0]}", 'utf8', (err,post) ->
+      post = md post
+      res.render 'index', layout: false, locals: {posts, post}
+
+app.get '/posts/:year/:month/:day/:name', (req, res) ->
+  fs.readdir "./posts", (err, posts) ->
+    fs.readFile "./posts/#{req.params.year}_#{req.params.month}_#{req.params.day}_#{req.params.name}.md", 'utf8', (err,post) -> 
+      post = md post
+      res.render 'index', layout: false, locals: {posts, post}
 
 app.get '/cv', (req, res) ->
   res.render 'cv', layout: false, locals: {employers, achievements} 
