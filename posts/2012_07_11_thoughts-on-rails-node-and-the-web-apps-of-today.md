@@ -11,7 +11,7 @@ I have abandoned Ruby and Rails in its entirety. Why?
 The single page application
 ---
 
-The Single Page Application comes to mind. It has changed the way we think of how apps should work. It's the current step along a journey that began with AJAX. 
+The Single Page Application is one reason. It has changed the way we think of how apps should work. It's the current step along a journey that began with AJAX. 
 
 Rails made it easy to build AJAX-powered web applications; We had our view templates on the server, compiled them there, and shipped them to the client. Any AJAX feature simply fetched the compiled html and sent it back to the browser for the client to handle. Why would anyone want to change that?
 
@@ -71,7 +71,7 @@ To Rails' credit, people have made various attempts to port it to Node.js, but i
 The rise of the real-time web
 ---
 
-Following a session on WebSockets presented by Peter Lubbers at Skills Matter, New Bamboo embarked on some WebSockets hacking at a company hack day. That hackday project then ended becoming [Pusher](http://pusher.com), and that is the best reason I can give for why all companies should have hack days.
+Following a session on WebSockets presented by Peter Lubbers at Skills Matter, New Bamboo embarked on some WebSockets hacking at a company hack day. That hackday project then ended up becoming what is now [Pusher](http://pusher.com), and that is the best reason I can give for why all companies should have hack days.
 
 At the time it looked fun, but I never imagined it would end up being a big deal. I made some fun demos, one of which was brilliant. I had made a HTML5 keyboard called [Sweet Music](http://sweetmusicapp.com), and I would play it at 10am every day for the daily standup. Then one day I hooked up Pusher to it, so that I could remotely trigger the "waaa" from any web browser. Before I left New Bamboo to join AOL, I had left a web browser with Sweet Music open on one of the monitors in the office, and turned off the screen so that no one would notice. Come the following Monday when I was no longer there, I opened up my laptop, and pranked the bambinos with Sweet Music, right on time.
 
