@@ -422,15 +422,18 @@ button.btn::-moz-focus-inner,input[type=submit].btn::-moz-focus-inner{padding:0;
 .media-grid a img{display:block}
 .media-grid a:hover{border-color:#0069d6;-webkit-box-shadow:0 1px 4px rgba(0,105,214,0.25);-moz-box-shadow:0 1px 4px rgba(0,105,214,0.25);box-shadow:0 1px 4px rgba(0,105,214,0.25)}
 body{background-color:#f3f2e5;color:#5c4d36}
+.center{text-align:center}
 p,ul{font-size:11pt;line-height:1.5em}
 li{color:#5c4d36;line-height:1.5em}
 a{color:#b1751b}
 h1,h2,h3{color:#726550;line-height:1.5em}
 h2{margin-top:20px;margin-bottom:10px}
 img{border:solid 10px #fff;-webkit-box-shadow:5px 5px 8px #888;margin:20px 10px}
+ul#posts li{list-style-type:square}
 li#github{list-style-image:url("/images/github.png")}
 li#twitter{list-style-image:url("/images/twitter.png")}
 li#email{list-style-image:url("/images/email.png")}
 #header{margin:20px 0 50px;}
 #header #myPicture{background-image:url("/images/me.jpg");width:80px;height:80px;-webkit-border-radius:100px;-moz-border-radius:100px;border-radius:100px;border:solid 2px #fff;-webkit-box-shadow:0 0 8px #333}
 .article{margin-bottom:50px}
+blockquote{margin:20px 0;border-left-color:#888;line-height:2em}

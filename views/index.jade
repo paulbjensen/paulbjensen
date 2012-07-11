@@ -2,7 +2,8 @@
 html
   head
     title Paul Jensen
-    != css('main')
+    //!= css('main')
+    link(rel="stylesheet", type="text/css", href="/css/main-f64d6db605d22eb4ad03c43d75f52ca1.css")
   body
     .container
       #header
@@ -20,7 +21,7 @@ html
             ul#posts
               - for(post in posts)
                 li
-                  a(href="")= posts[post].split(".")[0].split("_")[3].replace("-"," ")
+                  a(href="/posts/"+posts[post].split(".")[0].replace(/_/gi,"/"))= posts[post].split(".")[0].split("_")[3].replace(/-/gi," ")
             h2 Contact
             ul#accounts
               li#github <a href="https://github.com/paulbjensen" alt="Paul's GitHub account">GitHub</a>

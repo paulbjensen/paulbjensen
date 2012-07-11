@@ -2,10 +2,11 @@ express = require 'express'
 assets  = require 'connect-assets'
 md      = require('node-markdown').Markdown
 fs      = require 'fs'
-app     = express.createServer express.logger()
+app     = express.createServer()
 
-app.use assets buildDir: "builtAssets"
-app.use express.static "#{__dirname}/public"
+#app.use assets buildDir: "builtAssets"
+app.use express.staticCache()
+app.use express.static "#{__dirname}/public", maxAge: 31557600000
 app.set 'view engine', 'jade'
 
 empDesc = (name) -> 
@@ -63,31 +64,41 @@ employers = [
     }
   ]
 
-  achievements = [
-    {'year': 2002, 'achievement': 'Awarded certificate for outstanding achievement in Business Education'},
-    {'year': 2002, 'achievement': 'Awarded credit for Young Enterprise Examination'},
-    {'year': 2003, 'achievement': 'Awarded certificate for outstanding achievement in Academic Excellence'},
-    {'year': 2003, 'achievement': 'Awarded curriculum award for Information Technology'},
-    {'year': 2004, 'achievement': 'Awarded curriculum award for Communication Studies (100% score in both A2 exams)'},
-    {'year': 2004, 'achievement': 'Awarded certificate for outstanding achievement in 6th form community involvement'},
-    {'year': 2005, 'achievement': 'Competed in the final of the IBM University business challenge 2004/2005, came 4th place out of 136 teams who competed.'}
-  ]
+achievements = [
+  {'year': 2002, 'achievement': 'Awarded certificate for outstanding achievement in Business Education'},
+  {'year': 2002, 'achievement': 'Awarded credit for Young Enterprise Examination'},
+  {'year': 2003, 'achievement': 'Awarded certificate for outstanding achievement in Academic Excellence'},
+  {'year': 2003, 'achievement': 'Awarded curriculum award for Information Technology'},
+  {'year': 2004, 'achievement': 'Awarded curriculum award for Communication Studies (100% score in both A2 exams)'},
+  {'year': 2004, 'achievement': 'Awarded certificate for outstanding achievement in 6th form community involvement'},
+  {'year': 2005, 'achievement': 'Competed in the final of the IBM University business challenge 2004/2005, came 4th place out of 136 teams who competed.'}
+]
 
+fs.readdir "./posts", (err, posts) ->
+  posts = posts.reverse()
 
-# For some reason, express 3.0 beta does not have a 'layout' and 'index' concept like before
-app.get '/', (req, res) ->
-  fs.readdir "./posts", (err, posts) ->
-    fs.readFile "./posts/#{posts[0]}", 'utf8', (err,post) ->
-      post = md post
-      res.render 'index', layout: false, locals: {posts, post}
+  fs.readFile "./posts/#{posts[0]}", 'utf8', (err,post) ->
+    currentPost = md post
 
-app.get '/posts/:year/:month/:day/:name', (req, res) ->
-  fs.readdir "./posts", (err, posts) ->
-    fs.readFile "./posts/#{req.params.year}_#{req.params.month}_#{req.params.day}_#{req.params.name}.md", 'utf8', (err,post) -> 
-      post = md post
-      res.render 'index', layout: false, locals: {posts, post}
+    app.get '/', (req, res) ->
+        res.render 'index', layout: false, locals: {posts:posts, post:currentPost}
 
-app.get '/cv', (req, res) ->
-  res.render 'cv', layout: false, locals: {employers, achievements} 
+    app.get '/posts/:year/:month/:day/:name', (req, res) ->
+      fs.exists "./posts/#{req.params.year}_#{req.params.month}_#{req.params.day}_#{req.params.name}.md", (exists) ->
+        if exists
+          fs.readFile "./posts/#{req.params.year}_#{req.params.month}_#{req.params.day}_#{req.params.name}.md", 'utf8', (err,post) -> 
+            post = md post
+            res.render 'index', layout: false, locals: {posts, post}
+        else
+          res.redirect '/404'
 
-app.listen 3000
+    app.get '/cv', (req, res) ->
+      res.render 'cv', layout: false, locals: {employers, achievements} 
+
+    app.get '/404', (req, res) ->
+      res.render '404', layout: false
+
+    app.get '*', (req, res) ->
+      res.redirect '/404'
+
+    app.listen 3000
