@@ -4,42 +4,36 @@ Thoughts on Rails, Node, and the web apps of today.
 
 Ruby on Rails is great. Having used it in web startups, on client projects at New Bamboo, and even in big old corporates like AOL, it has proven itself.
 
-In 2010, if I was building a pet project, I would lean towards using Rails, or Sinatra if it was really small. But today, I now find myself leaning towards using Node.js with either express or SocketStream. 
+In 2010, if I was building a pet project, I would lean towards using Rails, or Sinatra if it was really small. But today, I now find myself using Node.js with either Express or SocketStream. 
 
 I have abandoned Ruby and Rails in its entirety. Why?
 
 The single page application
 ---
 
-In my opinion, AJAX began the journey. Eliminating page reloads was nice, and Rails facilitated it; shipping Rails apps with the Prototype library by default, providing RJS to produce dynamic JavaScript code, and providing the respond_to block method to make it really easy to support AJAX request alongside the plain old HTTP request.
+The Single Page Application comes to mind. It has changed the way we think of how apps should work. It's the current step along a journey that began with AJAX. 
 
-Of course, we had our view templates on the server-side, compiled them server-side, and shipped them to the client that way. Why would anyone want to change that?
+Rails made it easy to build AJAX-powered web applications; We had our view templates on the server, compiled them there, and shipped them to the client. Any AJAX feature simply fetched the compiled html and sent it back to the browser for the client to handle. Why would anyone want to change that?
 
 The Server is the API
 ---
 
-MVC is a nice pattern, and Rails was nice, and the de facto behaviour was to do things in the way of the opionated framework, because it was productive.
+When you use Rails the way Rails wants you to use Rails, it's really productive. 
 
-But once you had the advent of mobile apps, and the need to serve them alongside the web app as well as the API, you began to realise that the View in MVC did not always belong on the server. With iOS/Android applications, the View was handled by the mobile application, not the Rails application.
+But when you begin developing mobile applications that talk to the server via an API, you realise that the View in MVC does not always belong on the server. The presentation layer belongs to the domain of the client, and the server is the API. This decoupling of MVC is well-supported, but you then find that you're using Rails as an API alongside being a web application; It's not a clean definition of responsibilities.
 
-Then, when you began to compare the approaches of the web app to the mobile app, you begin to see that Rails' AJAX requests shipped redundant bytes, in the form of the html template. The HTML stayed mostly the same, only the data changed.
-
-What if you treated the web application like you treated the mobile application, and delegated the view rendering to the client? 
-
-The view, the presentation layer, belongs to the domain of the client, and the server is the API.
-
-But that's not all...
+And that's not all...
 ---
 
-The view is not just HTML templates; it's the presentation logic, and the presentation logic needs structure. With this need, client-side frameworks like [Backbone](http://backbonejs.org/), [Spine](http://spinejs.com/), and [Ember](http://emberjs.com/) have come into the picture.
+The view in MVC is not just HTML and CSS; it's the presentation logic, and the presentation logic needs structure. With this need, client-side frameworks like [Backbone](http://backbonejs.org/), [Spine](http://spinejs.com/), and [Ember](http://emberjs.com/) have come into the picture.
 
-These frameworks have shifted the location of MVC between the client and the server. That is not to say that the server is just a dumb wrapper around the database, but that the logic for how an application works does not necessarily belong on the server.  
+These frameworks have shifted the location of MVC between the client and the server. That is not to say that the server is just a dumb wrapper around the database, far from it. It is to say that the logic of the application is now split between what is required in the API, and what is required by the client.
 
-When I was building Rails apps at AOL, I loved using Jose Valim's Inherited Resources gem, and using Cucumber and RSpec to do outside-in BDD. I bashed out code, and only stopped to think about the design of the REST API. It was wonderful. 
+We're now forced to __think about where our logic belongs__, and not just follow the train tracks laid out in front of us.
 
-But it was also lazy.
+So your Rails server becomes an API, and your web site, like the iOS app, is the client. It's a clean separation of responsibilies, but given what Rails was designed to do, it's like having a horse rider climb on top of an elephant.
 
-With client-side frameworks, we're now forced to __think about where our logic belongs__. It's refreshing, and it made me think. If the server is just the API, then what stops you from using other frameworks, like Sinatra or Goliath? what is the value of Rails as just an API?
+So you begin to ask, why should I use Rails instead of something like Sinatra or Goliath? what is the value of Rails as just an API?
 
 Or to put it this way, why would you consider alternatives? 
 
@@ -48,7 +42,7 @@ Rails' Performance
 
 When I think of Ruby and Rails' performance, I think of Ilya Grigorik.
 
-On his [blog](http://igvita.com), Ilya wrote (and continues to write) a string of fantastic posts about improving the speed and performance of web applications, and he noticed that [Rails was not the fastest tool out of the box](http://www.igvita.com/2010/06/07/rails-performance-needs-an-overhaul/).
+On his [blog](http://igvita.com), Ilya wrote (and continues to write) a string of fantastic posts about improving the speed and performance of web applications, and he noted that [Rails was not the fastest tool out of the box](http://www.igvita.com/2010/06/07/rails-performance-needs-an-overhaul/).
 
 In my opinion, he hit the nail on the head: (from the link above):
 
@@ -61,32 +55,46 @@ Node.js
 
 When my boss asked me to take a look at Node.js at AOL around Christmas 2010, my view of Node at that time was one of indifference to it. I downloaded code, built a sample app, looked at the docs, the libraries, and got a feel for it. 
 
-The biggest thing I noticed was the difference in performance. It consumed less memory than Ruby, and it served more requests per second than Sinatra or even Rack. Then what then made it even more interesting was [CoffeeScript](http://coffeescript.org); you could write JavaScript with fewer characters and a nicer syntax. It made it that more accessible to Rubyists like me.
+The biggest thing I noticed was the difference in performance. It consumed less memory than Ruby, and it served more requests per second than Sinatra or even Rack. What made it even more interesting was [CoffeeScript](http://coffeescript.org); you could write JavaScript with fewer characters and a nicer syntax. That made Node more accessible to Rubyists like me.
 
-In the new year, we were asked to build an internal account management tool, and we asked if it was ok to try and build it in Node. My boss' boss gave the thumbs up. This was a chance to get a real feel for what Node.js could do.
+In the new year, we were asked to build an internal account management tool, and we asked if it we could build it in Node. My boss' boss gave the thumbs up. This was a chance to get a real feel for what Node.js could do.
 
-Node turned out to be a wonderful little tool. It's amazing to be able to write both client and server-side code in the same language, and as companies like [LinkedIn have proven](http://news.ycombinator.com/item?id=2891025), it performs very well. When I compare Rails to Node, I consider Rails to be more mature and complete, but I find Node.js to be far more enjoyable and performant.
+Node turned out to work fantastically well in our case. As companies like [LinkedIn have proven](http://news.ycombinator.com/item?id=2891025), it can be used in the Enterprise, and perform well against high-traffic sites. Is it as enterprise-ready as Rails? I'd say that Rails is more mature and complete as a framework, especially when it comes to doing outside-in BDD.
 
-Another thing is that Rails was built at a time when PHP was king, and the web applications of that time compared to the web applications of now are ancient. Rails is good, and to its credit people have tried to port it to Node.js, but that is passing up on an opportunity to rethink how web applications of today should be built, using the technology that exists today.
-
-If one technology comes to minds, it's WebSockets.
-
-The rise of real-time
+The web apps of then and now
 ---
 
-When I first saw WebSockets in action at a New Bamboo hack day, I never imagined it would end up being a big deal. Sure, I'd built a demo or two using it, and then New Bamboo took their hack day project and turned it into [Pusher](http://pusher.com), and I left New Bamboo to join AOL. 
+When Rails came about (all the way in 2004), it was built at a time when MySpace was the daddy and Twitter didn't even exist. It didn't say "oh let's try and do what PHP does because everyone uses PHP"; it was fresh thinking. That kind of departure from the status quo is good; it's how we evolve.
 
-Then my boss went to Peter Lubbers' WebSockets session at Skills Matter, and he took a big interest in it. He appreciated the benefits of WebSockets over the standard HTTP request. With it, he eventually built what is now known as [SocketStream](http://socketstream.com).
+To Rails' credit, people have made various attempts to port it to Node.js, but in doing that, they are passing on an opportunity to rethink how web apps in today's world should be built. A lot of things have changed in the past 8 years, including Internet technology, and if I had to name one technology that comes to minds, it's WebSockets.
 
-The real-time web is an exciting prospect, and it's not just about chat applications. If you go to Pusher's site, you'll see games, analytics services, and collaboration tools. It's not just about receiving data in real-time; in combination with client-side MVC frameworks, the need to fetch data from the server upon loading a given resource is reduced; you can fetch the start at the start of loading the application, and then have any changes to that data be broadcast from the server to all the clients. The need to reload data from the server is gone. 
-
-There are so many possibilites, and not just for how applications work, but how they are built too. One of the nice features of SocketStream is that when you edit a CSS file in development mode, the changes get pushed up to the browser straight away, so rather than having to reload the page to see your changes, you see them instantly. This is improving developer workflow.
-
-Back on point
+The rise of the real-time web
 ---
 
-When I left AOL and joined a startup, the tech stack there was Rails, MongoDB, and Heroku. Going back to Rails after using Node.js was terrible; I didn't enjoy working with it anymore. The application was slow to load on my MacBook Air, and eventually I did a factory reset on the laptop to see if I could make it perform any better. The performance improved, but it was nothing compared to working with Node. Subsequently, I was let go by the startup, and I went on and built [Dashku](https://dashku.com), which I thoroughly enjoyed building.
+Following a session on WebSockets presented by Peter Lubbers at Skills Matter, New Bamboo embarked on some WebSockets hacking at a company hack day. That hackday project then ended becoming [Pusher](http://pusher.com), and that is the best reason I can give for why all companies should have hack days.
 
-I might be wrong, but I think that once you use Node.js and build real-time apps, it's difficult to enjoy doing anything else. 
+At the time it looked fun, but I never imagined it would end up being a big deal. I made some fun demos, one of which was brilliant. I had made a HTML5 keyboard called [Sweet Music](http://sweetmusicapp.com), and I would play it at 10am every day for the daily standup. Then one day I hooked up Pusher to it, so that I could remotely trigger the "waaa" from any web browser. Before I left New Bamboo to join AOL, I had left a web browser with Sweet Music open on one of the monitors in the office, and turned off the screen so that no one would notice. Come the following Monday when I was no longer there, I opened up my laptop, and pranked the bambinos with Sweet Music, right on time.
 
-Has anyone else had a similar experience? Let me know.
+Any interest in WebSockets was left at New Bamboo, as I dived into building a big HRM tool for AOL. It was a fun couple of months, as I discovered what working for a big company was like. At the end of the year, my boss decided to do some research into various web technologies.
+
+He went to Peter Lubbers' WebSockets session at Skills Matter.
+
+He came back very excited about 'dem sockets. During the time we spent building the account management tool in Node.js and MongoDB, Owen went much further, and started putting together a web framework that used WebSockets to transmit data between the client and the server. That web framework is [SocketStream](http://socketstream.com).
+
+Peter Lubbers was key to both Pusher and SocketStream, and I was very fortunate to witness the beginning of both of those things. They are a part of what is now termed "the real-time web", and it's a growing business; companies like [Meteor](http://meteor.com/) and [Bridge](https://getbridge.com/) are proof to that.
+
+The real-time web is an opportunity to rethink how applications should work (like my app [Dashku](https://dashku.com)), as well as how we as developers build them.
+
+For example, improving developer workflow. One of the nice features of SocketStream is that when you edit a CSS file in development mode, the changes get pushed up to the browser straight away, so rather than having to reload the page to see your changes, you see them instantly. If you modify a client-side Javascript file, the page reloads for you to checkout the change. It's a quicker way of doing things.
+
+The real-time web is exciting.
+
+Conclusion
+---
+
+When you look at Twitter, or LinkedIn, or Yammer, they all used Rails at the start. But over time, they started replacing various pieces with Java, or Node in LinkedIn's case.
+
+When I consider the combination of Single Page Apps, relegating back-ends to being APIs, the growing importance of performance & scalability, the momentum behind Node.js, and the rise of the real-time web, I see a picture emerge where the back-end will become purely an API component, and one that is swapped out for more performant alternatives over time. 
+
+How does Rails fits into that picture? I'm not sure.
+
