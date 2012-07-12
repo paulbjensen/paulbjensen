@@ -5,34 +5,38 @@ fs      = require 'fs'
 app     = express.createServer()
 
 #app.use assets buildDir: "builtAssets"
+app.use express.logger()
 app.use express.staticCache()
 app.use express.static "#{__dirname}/public", maxAge: 31557600000
 app.set 'view engine', 'jade'
+
+process.on 'uncaughtException', (err) -> 
+  console.error 'Exception caught: ', err
 
 empDesc = (name) -> 
   md fs.readFileSync './employerDescriptions/'+name+'.md', 'utf8', (err,data) -> data
 
 employers = [
     {
-      'timeline': 'February 2012 - April 2012',
-      'company': 'Uberlife',
-      'url': 'http://uberlife.com',
-      'role': 'Developer',
-      'description': empDesc 'uberlife'
+      'timeline'    : 'February 2012 - April 2012',
+      'company'     : 'Uberlife',
+      'url'         : 'http://uberlife.com',
+      'role'        : 'Developer',
+      'description' : empDesc 'uberlife'
     },
     {
-      'timeline': 'July 2010 - February 2012',
-      'company': 'AOL',
-      'url': 'http://corp.aol.com',
-      'role': 'Software Engineer',
-      'description': empDesc 'aol'
+      'timeline'    : 'July 2010 - February 2012',
+      'company'     : 'AOL',
+      'url'         : 'http://corp.aol.com',
+      'role'        : 'Software Engineer',
+      'description' : empDesc 'aol'
     },
     {
-      'timeline': 'May 2008 - July 2010',
-      'company': 'New Bamboo',
-      'url': 'http://new-bamboo.co.uk',
-      'role': 'Developer',
-      'description': empDesc 'new-bamboo'
+      'timeline'    : 'May 2008 - July 2010',
+      'company'     : 'New Bamboo',
+      'url'         : 'http://new-bamboo.co.uk',
+      'role'        : 'Developer',
+      'description' : empDesc 'new-bamboo'
     },
     {
       'timeline'    : 'February 2008 - May 2008',
@@ -56,11 +60,11 @@ employers = [
       'description' : empDesc 'topdrawmedia'
     },
     {
-      'timeline':   'June - August 2004', 
-      'company':    'AmTrac Ltd', 
-      'url':        '#',
-      'role':       'Cladding Labourer', 
-      'description': empDesc  'amtrac' 
+      'timeline'    : 'June - August 2004', 
+      'company'     : 'AmTrac Ltd', 
+      'url'         : '#',
+      'role'        : 'Cladding Labourer', 
+      'description' : empDesc 'amtrac' 
     }
   ]
 
