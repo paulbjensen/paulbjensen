@@ -2,9 +2,9 @@ express = require 'express'
 assets  = require 'connect-assets'
 md      = require('node-markdown').Markdown
 fs      = require 'fs'
+watch   = require 'watch'
 app     = express.createServer()
 
-#app.use assets buildDir: "builtAssets"
 app.use express.logger()
 app.use express.staticCache()
 app.use express.static "#{__dirname}/public", maxAge: 31557600000
@@ -78,31 +78,52 @@ achievements = [
   {'year': 2005, 'achievement': 'Competed in the final of the IBM University business challenge 2004/2005, came 4th place out of 136 teams who competed.'}
 ]
 
-fs.readdir "./posts", (err, posts) ->
-  posts = posts.reverse()
+setCurrentPostAndPosts = (cb) ->
+  fs.readdir "./posts", (err, posts) ->
 
-  fs.readFile "./posts/#{posts[0]}", 'utf8', (err,post) ->
-    currentPost = md post
+    global.posts = posts.reverse()
 
-    app.get '/', (req, res) ->
-        res.render 'index', layout: false, locals: {posts:posts, post:currentPost}
+    fs.readFile "./posts/#{posts[0]}", 'utf8', (err,post) ->
+      global.currentPost = md post
+      cb() if cb?
 
-    app.get '/posts/:year/:month/:day/:name', (req, res) ->
-      fs.exists "./posts/#{req.params.year}_#{req.params.month}_#{req.params.day}_#{req.params.name}.md", (exists) ->
-        if exists
-          fs.readFile "./posts/#{req.params.year}_#{req.params.month}_#{req.params.day}_#{req.params.name}.md", 'utf8', (err,post) -> 
-            post = md post
-            res.render 'index', layout: false, locals: {posts, post}
-        else
-          res.redirect '/404'
 
-    app.get '/cv', (req, res) ->
-      res.render 'cv', layout: false, locals: {employers, achievements} 
+watch.createMonitor "#{__dirname}/posts", (monitor) ->
 
-    app.get '/404', (req, res) ->
-      res.render '404', layout: false
+  monitor.on "created", (f, stat) ->
+    setCurrentPostAndPosts()  
 
-    app.get '*', (req, res) ->
-      res.redirect '/404'
+  monitor.on "changed", (f, curr, prev) ->
+    setCurrentPostAndPosts()  
 
-    app.listen 3000
+  monitor.on "removed", (f, stat) ->
+    setCurrentPostAndPosts()  
+
+setCurrentPostAndPosts ->
+
+  app.get '/', (req, res) ->
+      res.render 'index', layout: false, locals: {posts:posts, post:currentPost}
+
+  app.get '/posts/:year/:month/:day/:name', (req, res) ->
+    fs.exists "./posts/#{req.params.year}_#{req.params.month}_#{req.params.day}_#{req.params.name}.md", (exists) ->
+      if exists
+        fs.readFile "./posts/#{req.params.year}_#{req.params.month}_#{req.params.day}_#{req.params.name}.md", 'utf8', (err,post) -> 
+          post = md post
+          res.render 'index', layout: false, locals: {posts, post}
+      else
+        res.redirect '/404'
+
+  app.get '/cv', (req, res) ->
+    res.render 'cv', layout: false, locals: {employers, achievements} 
+
+  app.get '/404', (req, res) ->
+    res.render '404', layout: false
+  
+  app.get '/reload', (req, res) ->
+    setCurrentPostAndPosts ->
+      res.send "OK"
+
+  app.get '*', (req, res) ->
+    res.redirect '/404'
+
+  app.listen 3000

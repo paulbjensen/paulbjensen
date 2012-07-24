@@ -15,7 +15,8 @@
     "express":"2.5.11",
     "jade":"latest",
     "node-markdown":"latest",
-    "stylus":"latest"
+    "stylus":"latest",
+    "watch":"latest"
   },
   "devDependencies": {},
   "optionalDependencies": {},
