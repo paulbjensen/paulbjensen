@@ -125,5 +125,7 @@ setCurrentPostAndPosts ->
 
   app.get '*', (req, res) ->
     res.redirect '/404'
+    
+  port = process.env.PORT or 3000
 
-  app.listen 3000
+  app.listen port
