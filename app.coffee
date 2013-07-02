@@ -79,11 +79,11 @@ achievements = [
 ]
 
 setCurrentPostAndPosts = (cb) ->
-  fs.readdir "./posts", (err, posts) ->
+  fs.readdir "#{__dirname}/posts", (err, posts) ->
 
     global.posts = posts.reverse()
 
-    fs.readFile "./posts/#{posts[0]}", 'utf8', (err,post) ->
+    fs.readFile "#{__dirname}/posts/#{posts[0]}", 'utf8', (err,post) ->
       global.currentPost = md post
       cb() if cb?
 
@@ -105,9 +105,9 @@ setCurrentPostAndPosts ->
       res.render 'index', layout: false, locals: {posts:posts, post:currentPost}
 
   app.get '/posts/:year/:month/:day/:name', (req, res) ->
-    fs.exists "./posts/#{req.params.year}_#{req.params.month}_#{req.params.day}_#{req.params.name}.md", (exists) ->
+    fs.exists "#{__dirname}/posts/#{req.params.year}_#{req.params.month}_#{req.params.day}_#{req.params.name}.md", (exists) ->
       if exists
-        fs.readFile "./posts/#{req.params.year}_#{req.params.month}_#{req.params.day}_#{req.params.name}.md", 'utf8', (err,post) -> 
+        fs.readFile "#{__dirname}/posts/#{req.params.year}_#{req.params.month}_#{req.params.day}_#{req.params.name}.md", 'utf8', (err,post) -> 
           post = md post
           res.render 'index', layout: false, locals: {posts, post}
       else
