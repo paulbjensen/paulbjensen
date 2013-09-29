@@ -1,0 +1,19 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: Domine, sans-serif;
+  color: #292c38;
+}
+#container {
+  margin: 0 auto;
+  position: relative;
+  width: 960px;
+  margin-top: 50px;
+}
+#container h1 {
+  font-weight: 800;
+  font-size: 36pt;
+}
+#container p {
+  font-size: 16pt;
+}

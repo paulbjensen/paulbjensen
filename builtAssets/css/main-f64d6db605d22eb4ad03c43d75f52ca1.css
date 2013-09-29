@@ -434,6 +434,6 @@ li#github{list-style-image:url("/images/github.png")}
 li#twitter{list-style-image:url("/images/twitter.png")}
 li#email{list-style-image:url("/images/email.png")}
 #header{margin:20px 0 50px;}
-#header #myPicture{background-image:url("/images/me.jpg");width:80px;height:80px;-webkit-border-radius:100px;-moz-border-radius:100px;border-radius:100px;border:solid 2px #fff;-webkit-box-shadow:0 0 8px #333}
+#header #myPicture{background-image:url("/images/me_but_better.jpg");width:80px;height:80px;-webkit-border-radius:100px;-moz-border-radius:100px;border-radius:100px;border:solid 2px #fff;-webkit-box-shadow:0 0 8px #333}
 .article{margin-bottom:50px}
 blockquote{margin:20px 0;border-left-color:#888;line-height:2em}
