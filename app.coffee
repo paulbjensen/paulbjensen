@@ -18,6 +18,13 @@ empDesc = (name) ->
 
 employers = [
     {
+      'timeline'    : 'August 2012 - ',
+      'company'     : 'Axisto Media',
+      'url'         : 'http://axisto.com',
+      'role'        : 'Developer',
+      'description' : empDesc 'axisto'
+    },
+    {
       'timeline'    : 'February 2012 - April 2012',
       'company'     : 'Uberlife',
       'url'         : 'http://uberlife.com',

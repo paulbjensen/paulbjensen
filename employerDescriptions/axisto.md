@@ -1,0 +1,7 @@
+- Joined Axisto in August 2012
+- Began work on improving the quality of Axisto Live
+- Replaced NowJS with a custom WebSocket transport library solution
+- Developed Attendee.io in the space of 7 weeks for the BMJ
+- Assisted with the BMJ IF 2013 event in London
+- Developed a tool to assist with deploying web applications, [Redstone](https://github.com/sc-live/redstone)
+- Developing a webcasting tool, webcast.io
