@@ -2,6 +2,6 @@
 - Developed the Single-Sign-On web service for Amnesty International UK. 
 - Continued working with Amnesty International UK on their social activism project [Protect the Human](http://www.protectthehuman.com/).
 - Worked on the content-sharing API for the Vodafone 360 service.
-- Worked on Amnesty International's AICrisis [widget](http://www.amnesty.org/en/how-you-can-help/share/widgets/sri-lanka) & [Facebook application](http://apps.facebook.com/aicrisisapp).
+- Worked on Amnesty International's AICrisis widget & Facebook application.
 - Worked on New Bamboo's project management product, [Truestory](http://truestoryapp.com/).
 - Team Leader on the redesign and development of [Spabreaks](http://spabreaks.com/). Increased online sales by 33%.
