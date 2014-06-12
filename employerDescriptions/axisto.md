@@ -3,7 +3,7 @@
 - Wrote a load testing tool using Amazon Web Services, Node.js and PhantomJS to load test the web application for up to 6,000 concurrent viewers.
 - Replaced NowJS with a custom WebSocket transport library solution that worked with Node.js' cluster module, called [Chassis.io](https://github.com/webcast-io/chassis.io)
 - Developed an events conference solution called [Attendee.io](http://attendee.io) in the space of 7 weeks for the British Medical Journal
-- Assisted at the [British Medical Journal International Forum on Quality and Safety in Healthcare 2013 conference in London](http://atn.io/qf13)
+- Managed the site for the [British Medical Journal International Forum on Quality and Safety in Healthcare 2013 conference in London](http://atn.io/qf13)
 - Developed an npm module to help deploy web applications in a similar fashion to Capistrano, called [Redstone](https://github.com/webcast-io/redstone)
 - Received an offer to interview with Facebook in California. Declined the offer due to family circumstances.
 - Wrote a load testing tool for consuming RTMP traffic at scale, managed to discover that our data center had put our servers on a shared port, rather than the dedicated port we were paying for.
@@ -11,5 +11,5 @@
 - Developed a Job Queue solution to improve the performance and scalability of our Axisto Live platform, called [Jobukyu](https://github.com/webcast-io/jobukyu)
 - Became the only developer to support both the Axisto Live webcasting platform and the Attendee.io events platform, at the busiest time of the year for Axisto.
 - On top of this, made critical efforts to improve the company's infrastructure setup, monitoring and documentation in preparation for a holiday going to Australia.
-- Assisted at the [British Medical Journal International Forum on Quality and Safety in Healthcare 2014 conference in Paris](http://atn.io/qf14)
+- Managed the site for the [British Medical Journal International Forum on Quality and Safety in Healthcare 2014 conference in Paris](http://atn.io/qf14)
 - Created a Desktop application using Node-Webkit for the BMJ event, replacing a legacy Adobe Air application and thus making it easier for medical professionals to use.

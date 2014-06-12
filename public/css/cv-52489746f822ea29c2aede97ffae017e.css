@@ -422,7 +422,7 @@ button.btn::-moz-focus-inner,input[type=submit].btn::-moz-focus-inner{padding:0;
 .media-grid a img{display:block}
 .media-grid a:hover{border-color:#0069d6;-webkit-box-shadow:0 1px 4px rgba(0,105,214,0.25);-moz-box-shadow:0 1px 4px rgba(0,105,214,0.25);box-shadow:0 1px 4px rgba(0,105,214,0.25)}
 #header{margin:20px 0 50px;}
-#header #myPicture{background-image:url("/images/me_but_better.jpg");width:80px;height:80px;-webkit-border-radius:100px;-moz-border-radius:100px;border-radius:100px;border:solid 2px #fff;-webkit-box-shadow:0 0 8px #333; background-position: center center; background-size: 110%;}
+#header #myPicture{background-image:url("/images/me_but_better.jpg");width:80px;height:80px;-webkit-border-radius:100px;-moz-border-radius:100px;border-radius:100px;border:solid 2px #fff;-webkit-box-shadow:0 0 8px #333; background-position: center center; background-size: 110%; float: left;}
 #header h1{float:left;margin:25px}
 #content{margin-top:50px;clear:both}
 #education h2,#employment h2,#skills h2,#hobbies h2,#references h2{margin:20px 0 10px}
