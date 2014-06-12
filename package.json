@@ -22,5 +22,8 @@
   "optionalDependencies": {},
   "engines": {
     "node": "=0.8.22"
+  },
+  "scripts": {
+    "start" : "node_modules/coffee-script/bin/coffee app.coffee"
   }
 }
