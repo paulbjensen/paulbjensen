@@ -1,4 +1,6 @@
-- Worked at a vertical search engine start-up and helped the company expand into the US from the UK.
+- A vertical search engine start-up
+- Helped the company transition from an initial secondary ticket broker to a ticket search engine.
+- Made changes to help the company expand into the US from the UK, adding multi-currency and date support.
 - Developed web spiders, added filter functionality to search results, and built a Facebook application.
-- One of the [Seedcamp 2007 finalists](http://techcrunch.com/2007/08/30/seedcamp-finalists-chosen-battle-to-final-five-next-week/)
+- Tickex was one of the [Seedcamp 2007 finalists](http://techcrunch.com/2007/08/30/seedcamp-finalists-chosen-battle-to-final-five-next-week/)
 - Company moved back to Costa Mesa, California, due to funding limitations. Company is now defunct.

@@ -1,9 +1,8 @@
-- Joined AOL after being approached by the company directly.
+- Joined AOL's advertising operations team.
 - Developed Onboard, a HRM application to manage the setup of new hires within the UK office.
 - Upgraded existing applications to use the latest version of Ruby on Rails (Rails 3 at the time).
 - Developed new applications to replace legacy architecture based on Siebel Systems and a 16-year-old database.
 - Built an internal Ad Campaign tool called AdSpeed on a technology stack of NodeJS, Ruby, Redis and MongoDB.
 - Contributed to the development of [SocketStream](https://github.com/socketstream/socketstream), a radical new web framework built on top of NodeJS, CoffeeScript, Redis and WebSockets.
-- During this time, I received and declined an interview offer to work at Square in San Francisco, California.
 - Helped launch SocketStream at the [HackerNews London meetup in June 2011](http://skillsmatter.com/podcast/home/introducing-a-new-real-time-web-framework).
 - Extended Onboard to be used to hire employees within AOL's EMEA businesses (GoViral, AdTech, 5min).

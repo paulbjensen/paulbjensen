@@ -1,15 +1,14 @@
-- Joined Axisto in August 2012
-- Began work on improving [Axisto Live](http://axisto-live.com), a web app used to deliver live video/audio webcasts for FTSE 100 companies.
-- Wrote a load testing tool using Amazon Web Services, Node.js and PhantomJS to load test the web application for up to 6,000 concurrent viewers.
-- Replaced NowJS with a custom WebSocket transport library solution that worked with Node.js' cluster module, called [Chassis.io](https://github.com/webcast-io/chassis.io)
-- Developed an events conference solution called [Attendee.io](http://attendee.io) in the space of 7 weeks for the British Medical Journal
+- Began work on [Axisto Live](http://axisto-live.com), a web app used to deliver live media webcasts for FTSE 100 companies.
+- Wrote a load testing tool using Amazon Web Services, Node.js and PhantomJS to load test the web application.
+- Replaced an abanonded WebSocket library called NowJS with a custom WebSocket transport library solution that worked with Node.js' cluster module, called [Chassis.io](https://github.com/webcast-io/chassis.io).
+- Setup the staging and production infrastructure for Axisto-Live.com.
+- Developed, tested and deployed an events conferences wev application called [Attendee.io](http://attendee.io) in the space of 7 weeks for the British Medical Journal.
 - Managed the site for the [British Medical Journal International Forum on Quality and Safety in Healthcare 2013 conference in London](http://atn.io/qf13)
-- Developed an npm module to help deploy web applications in a similar fashion to Capistrano, called [Redstone](https://github.com/webcast-io/redstone)
-- Received an offer to interview with Facebook in California. Declined the offer due to family circumstances.
+- Developed an npm module to help deploy web applications in a similar fashion to Capistrano, called [Redstone](https://github.com/webcast-io/redstone).
 - Wrote a load testing tool for consuming RTMP traffic at scale, managed to discover that our data center had put our servers on a shared port, rather than the dedicated port we were paying for.
-- Worked on the initial setup of a new webcasting tool called [webcast.io](https://staging.webcast.io)
+- Worked on the initial setup of a new webcasting tool called [webcast.io](https://staging.webcast.io).
 - Developed a Job Queue solution to improve the performance and scalability of our Axisto Live platform, called [Jobukyu](https://github.com/webcast-io/jobukyu)
 - Became the only developer to support both the Axisto Live webcasting platform and the Attendee.io events platform, at the busiest time of the year for Axisto.
-- On top of this, made critical efforts to improve the company's infrastructure setup, monitoring and documentation in preparation for a holiday going to Australia.
+- On top of this, made critical efforts to improve the company's infrastructure setup, monitoring and documentation as I would was going to be away on holiday for one month in Thailand and Australia.
 - Managed the site for the [British Medical Journal International Forum on Quality and Safety in Healthcare 2014 conference in Paris](http://atn.io/qf14)
 - Created a Desktop application using Node-Webkit for the BMJ event, replacing a legacy Adobe Air application and thus making it easier for medical professionals to use.

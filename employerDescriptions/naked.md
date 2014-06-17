@@ -1,3 +1,3 @@
-- Worked at a social networking start-up.
+- Joined a social networking start-up using Ruby on Rails.
 - Collaborated with the product development team to enhance the service with features relating to messaging, authentication, and privacy controls.
 - Naked went into administration in May 2008, see Techcrunch articles [here](http://eu.techcrunch.com/2008/05/28/naked-stripped-bare-startup-runs-out-of-cash-enters-liquidation/) and [here](http://eu.techcrunch.com/2008/05/30/disecting-naked/).

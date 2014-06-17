@@ -10,54 +10,21 @@ html
         h1 Paul Jensen
       #content
         .row
-          .span8
-            .address.left 
-              span Flat 2, 84 Green Lanes
-              br 
-              span London
-              br 
-              span N16 9EJ
-          .span8.last
-            .phone.pull-right +44 (0) 7914 171 345
-            br
-            .email.pull-right
+          .span6
+            .location London, United Kingdom
+            .phone +44 (0) 7914 171 345
+            .email
               a(href='mailto:paulbjensen@gmail.com') paulbjensen@gmail.com
-        .row
-          .span16
-            .center A well-mannered, hard-working individual with a diverse creativity streak, and a strong interest in technology.
-        .row#employment
-          .span16.last
-            h2.center Employment
-            - for(employer in employers)
-              .employer.clearfix
-                .details
-                  .company
-                    a(href = employers[employer]['url'])
-                      h3= employers[employer]['company']
-                  .role= employers[employer]['role']
-                  .timeline= employers[employer]['timeline']
-                .description!= employers[employer]['description']
+          .span8
+            .summary 
+              div Full stack developer. 
+              div Lead developer of the SocketStream web framework
+              div Founder - Anephenix Ltd 
+
         .row#skills
           .span16.last
             h2.center Skills
           .span16
-            h3 Ruby
-            ul
-              li Began learning Ruby and Ruby on Rails in January 2007.
-              li Gave a presentation at LRUG April 2009 on using <a href="http://www.slideshare.net/paulbjensen/geokit-in-social-apps-1327600">Geokit in social apps</a>.
-              li Recently created a <a href="https://github.com/Anephenix/dashku-ruby">Rubygem</a> that acts as a wrapper to Dasku's API.
-
-            h3 Ruby on Rails
-            ul 
-              li Been using RoR commercially since June 2007 (Tickex). Used continously throughout my time at New Bamboo, at AOL (2010), and at Uberlife.
-              li Built a Rails plugin for helping developers build apps to visually match wireframes: <a href="http://paulbjensen.github.io/tangerine/">Tangerine</a>.
-            
-            h3 Javascript / CoffeeScript
-            ul
-              li Began using JavaScript at Tickex, and to a greater extent at New Bamboo and AOL.
-              li Recreated the Snake game using HTML5 Canvas, whilst at New Bamboo. (<a href="https://github.com/newbamboo/Snake">Github</a>, <a href="http://blog.new-bamboo.co.uk/2009/12/31/html5-canvas-snake-game">blog post</a>)
-              li Created a client-side templating library called <a href="http://paulbjensen.github.com/smartTemplate/">SmartTemplate</a> whilst at AOL.
-              li Built a simple Heroku-based app called Coffee Grinder to convert CoffeeScript files to JavaScript, at AOL.
 
             h3 Node.js
             ul 
@@ -67,6 +34,30 @@ html
               li As part of Dashku, I've been building an npm called <a href="https://github.com/Anephenix/satellite">Satellite</a>, which adds some extensions to <a href="https://github.com/nodejitsu/node-http-proxy">node-http-proxy</a>.
               li Also part of Dashku, I created an <a href="https://github.com/Anephenix/dashku-node">npm</a> for Dashku that acts as a wrapper to its REST API. 
 
+            h3 Javascript / CoffeeScript
+            ul
+              li Began using JavaScript at Tickex, and to a greater extent at New Bamboo and AOL.
+              li Recreated the Snake game using HTML5 Canvas, whilst at New Bamboo. (<a href="https://github.com/newbamboo/Snake">Github</a>, <a href="http://blog.new-bamboo.co.uk/2009/12/31/html5-canvas-snake-game">blog post</a>)
+              li Created a client-side templating library called <a href="http://paulbjensen.github.com/smartTemplate/">SmartTemplate</a> whilst at AOL.
+              li Built a simple Heroku-based app called Coffee Grinder to convert CoffeeScript files to JavaScript, at AOL.
+
+            h3 HTML/CSS
+            ul
+              li Plenty of experience in working with HTML and CSS (from 2006 to today).
+
+            h3 Ruby
+            ul
+              li Began learning Ruby and Ruby on Rails by myself in January 2007.
+              li Gave a presentation at LRUG April 2009 on using <a href="http://www.slideshare.net/paulbjensen/geokit-in-social-apps-1327600">Geokit in social apps</a>.
+              li Created a <a href="https://github.com/Anephenix/dashku-ruby">Rubygem</a> as an API client for Dasku.
+
+            h3 Ruby on Rails
+            ul
+              li Been using Ruby on Rails commercially at Tickex, Naked, New Bamboo, AOL and Uberlife.
+              li Worked on Amnesty International's Protect the Human, AICrisis app, Vodafone 360, and Spabreaks.com's rewrite Rails applications.
+              li Developed AOL Onboard as a Rails 3 application with good test coverage and BDD from the start.
+              li At New Bamboo, I built a Rails plugin for helping developers build apps to visually match wireframes: <a href="http://paulbjensen.github.io/tangerine/">Tangerine</a>.
+            
             h3 MongoDB
             ul
               li Been using MongoDB commercially since January 2011 (AOL). Used it continually since.
@@ -85,14 +76,32 @@ html
               li Experience with creating self-hosted git repositories (AOL), using feature branches, and using git blame to hunt down the introduction of bugs.
               li Working on a concept application that uses git hooks to alter the status of tasks and stories during an Agile sprint.
 
-            h3 Other
+            h3 SQL
             ul
               li Some experience using MySQL/PostGreSQL. My knowledge/experience in using SQL is limited, and needs improving.
-              li Some experience in setting up Linux servers to run applications, from my time at New Bamboo, AOL, and recently with Dashku.
-              li Plenty of experience in working with HTML and CSS (from 2006 to today).
+ 
+            h3 Linux Server Administration
+            ul
+              li Experienced with setting up Linux servers for applications, databases and microservices since 2010.
+              li Setup upstart services, monitoring, ssh users, firewall, and documentation.
+
+        
+        .row#employment
+          .span16.last
+            h2.center Employment
+            - for(employer in employers)
+              .employer.clearfix
+                .details
+                  .company
+                    a(href = employers[employer]['url'])
+                      h3= employers[employer]['company']
+                  .role= employers[employer]['role']
+                  .timeline= employers[employer]['timeline']
+                .description!= employers[employer]['description']
+
         .row#education
           .span16.center.last
-            h2 Education & Qualifications
+            h2 Education
           .span16.center.last
             .school
               a(href = 'http://www.sharnbrook.beds.sch.uk') Sharnbrook Upper School & Community College (1998 - 2003)
@@ -194,29 +203,17 @@ html
         .row#references
           .span16.last
             h2.center References
-          .span5
+          .span6
             a.name(href="http://uk.linkedin.com/in/dominicshelley") Dominic Shelley
             .title Vice President, European IT
             .company Hilton Worldwide
-            a.email(href='mailto:dshelleyic@aol.com') dshelleyic@aol.com
-            .relation
-              b How do you know Dominic?
-              .reason I worked under Dominic's line of reports at AOL. 
-          .span5
+          .span6
             a.name(href="http://uk.linkedin.com/in/owenbarnes") Owen Barnes
-            .title Senior Manager
-            .company AOL
-            a.email(href='mailto:owen.barnes@teamaol.com') owen.barnes@teamaol.com
-            .relation
-              b How do you know Owen?
-              .reason I worked for Owen at AOL. 
-          .span6.last
+            .title Web Technology Consultant
+            .company Realtime Technologies Ltd
+          .span4.last
             a.name(href="http://uk.linkedin.com/in/jlsync") Jason Lee
-            .title CTO
-            .company Savergo
-            a.email(href = 'mailto:jlsync@gmail.com') jlsync@gmail.com
-            .relation
-              b How do you know Jason?
-              .reason I worked under the lead of Jason when we were both at Naked
+            .title Founder
+            .company Rotaville
 
           

@@ -42,6 +42,12 @@
       'role': 'Developer',
       'description': empDesc('axisto')
     }, {
+      'timeline': 'July 2012 - ',
+      'company': 'Anephenix',
+      'url': 'http://anephenix.com',
+      'role': 'Founder',
+      'description': empDesc('anephenix')
+    }, {
       'timeline': 'February 2012 - April 2012',
       'company': 'Uberlife',
       'url': 'http://uberlife.com',

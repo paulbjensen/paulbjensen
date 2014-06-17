@@ -24,6 +24,6 @@
     "node": "0.10.x"
   },
   "scripts": {
-    "start" : "node_modules/coffee-script/bin/coffee app.coffee"
+    "start" : "node app.js"
   }
 }
