@@ -1,6 +1,6 @@
 - Began work on [Axisto Live](http://axisto-live.com), a web app used to deliver live media webcasts for FTSE 100 companies.
 - Wrote a load testing tool using Amazon Web Services, Node.js and PhantomJS to load test the web application.
-- Replaced an abanonded WebSocket library called NowJS with a custom WebSocket transport library solution that worked with Node.js' cluster module, called [Chassis.io](https://github.com/webcast-io/chassis.io).
+- Replaced an abandoned WebSocket library called NowJS with a custom WebSocket transport library solution that worked with Node.js' cluster module, called [Chassis.io](https://github.com/webcast-io/chassis.io).
 - Setup the staging and production infrastructure for Axisto-Live.com.
 - Developed, tested and deployed an events conferences wev application called [Attendee.io](http://attendee.io) in the space of 7 weeks for the British Medical Journal.
 - Managed the site for the [British Medical Journal International Forum on Quality and Safety in Healthcare 2013 conference in London](http://atn.io/qf13)

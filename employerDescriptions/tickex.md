@@ -3,4 +3,4 @@
 - Made changes to help the company expand into the US from the UK, adding multi-currency and date support.
 - Developed web spiders, added filter functionality to search results, and built a Facebook application.
 - Tickex was one of the [Seedcamp 2007 finalists](http://techcrunch.com/2007/08/30/seedcamp-finalists-chosen-battle-to-final-five-next-week/)
-- Company moved back to Costa Mesa, California, due to funding limitations. Company is now defunct.
+- Tickex moved back to Costa Mesa, California, due to funding limitations in 2007, and no longer exists.

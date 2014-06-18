@@ -8,4 +8,4 @@
 - In June 2013, I was informed by someone at Facebook that they were using Dashku internally. They asked me to interview with Facebook in California in order to work for them. I Declined the offer due to family circumstances.
 - Became the Lead Developer for SocketStream in August 2013.
 - In September 2013, a company called Litmus Automation asked to use Dashku for their Internet of Things application, and are now using it.
-- I decided this year to put more time into working on Anephenix and Dashku.
+- This year, I decided this year to leave Axisto in order to work on Anephenix.

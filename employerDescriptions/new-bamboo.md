@@ -2,7 +2,7 @@
 - Began by working on an internal moderation service called 'ModMonkey'.
 - Developed the Single-Sign-On web service for Amnesty International UK. 
 - Continued working with Amnesty International UK to deliver their social activism project [Protect the Human](http://www.protectthehuman.com/).
-- Worked on a new project for Vodafone to develop a mobile-based social network.
+- Worked on a new project for Vodafone to develop a mobile-based social network called 360.
 - Worked on Amnesty International's AICrisis widget & Facebook application.
 - After AI, I turned to working on an internal project management product called [Truestory](http://truestoryapp.com/).
 - I was the Team Leader on the redesign and development of [Spabreaks](http://spabreaks.com/), an 8-month project that increased online sales by 33%.
